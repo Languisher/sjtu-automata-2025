@@ -1,8 +1,11 @@
 # sjtu-automata
-![Version](https://img.shields.io/badge/Version-0.4.0-blue.svg) ![Language](https://img.shields.io/badge/Language-Python3-red.svg) ![License](https://img.shields.io/badge/License-GPL--3.0-yellow.svg)
-## 寻求维护者：由于本人即将离开毕业，本仓库相关维护工作将无法进行，现寻求新一届维护者，如有兴趣欢迎联系！
+![Version](https://img.shields.io/badge/Version-0.4.0.0218-blue.svg) ![Language](https://img.shields.io/badge/Language-Python3-red.svg) ![License](https://img.shields.io/badge/License-GPL--3.0-yellow.svg)
 
-**注意！此版本为BETA版，未经过严格测试，可能存在BUG，如有问题请提交[issue](https://github.com/MXWXZ/AutoElect/issues)**
+声明：
+- 本仓库仅为自用
+- [2025.02.18] 已在 macOS 上验证可以跑通
+
+**v0.4.0.0218更新：修复了文件目录位置不正确导致函数死循环的问题。**
 
 **v0.4.0更新：教务系统限制大约在30-60分钟左右可能需要重新登陆。**
 
@@ -52,6 +55,8 @@ macOS
 - 插件安装完成后点击这里进入脚本安装页面：https://github.com/MXWXZ/sjtu-automata/raw/master/sjtu-automata.user.js
 - 下面的教程以安装插件之后为准，如果不安装油猴脚本也可以自行查看网页源码提取相关ID
 
+![](assets/webpage.png)
+
 1. 查看课程号和教学班：想选的课“教学班”第二行点击复制ID即可复制课号+教学班号
 2. 查看课程类型：标签页第二行的字符串即为课程类型
 3. 使用命令选课，格式为`autoelect [课程类型ID] [课程号ID] [256位教学班ID]`：
@@ -70,7 +75,7 @@ macOS
 
 ## 参数说明
 ### CLI
-使用：`autoelect [OPTIONS] [CLASSTYPE-CLASSID-JXBID]`
+在本仓库根目录执行：`python autoelect.py [OPTIONS] [CLASSTYPE-CLASSID-JXBID]`
 
 | 参数  |   长参数形式   |              说明              |
 | :---: | :------------: | :----------------------------: |
@@ -87,3 +92,8 @@ macOS
 - `CLASSTYPE`：2位课程类型
 - `CLASSID`：课号ID
 - `JXBID`：256位教学班ID
+
+例子：
+```bash
+python autoelect.py 13 MARX6003 162**a # 已省略
+```
